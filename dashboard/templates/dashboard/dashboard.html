@@ -1,0 +1,14 @@
+{% extends 'dashboard/base.html' %}
+{% load custom_filters %}
+
+{% block content %}
+    <h1>Dashboard Overview</h1>
+    <div style="display: flex; flex-wrap: wrap;">
+        {% for item in data %}
+            <div class="card">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.count|currency_format }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
